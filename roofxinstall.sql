@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2024 at 09:30 AM
+-- Generation Time: May 06, 2024 at 12:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -408,6 +408,18 @@ CREATE TABLE `features` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `features`
+--
+
+INSERT INTO `features` (`id`, `title`, `slug`, `description`, `photo`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Increase Productivity', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam', '9721418611711352790.png', 1, '2024-03-25 01:46:30', '2024-03-25 01:46:30'),
+(3, 'Control IT Costs', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam', '3928060991711352815.png', 1, '2024-03-25 01:46:55', '2024-03-25 01:46:55'),
+(4, 'Resolve Issues Faster', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam', '8895957801711352847.png', 1, '2024-03-25 01:47:27', '2024-03-25 01:47:27'),
+(5, 'Fully Managed Services', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam', '21265840281711352880.png', 1, '2024-03-25 01:48:00', '2024-03-25 01:48:00'),
+(6, 'Improve Security', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam', '16955785961711352913.png', 1, '2024-03-25 01:48:33', '2024-03-25 01:48:33'),
+(7, 'Expert Team', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam', '4819377771711352940.png', 1, '2024-03-25 01:49:00', '2024-03-25 01:49:00');
+
 -- --------------------------------------------------------
 
 --
@@ -479,7 +491,7 @@ CREATE TABLE `generalsettings` (
 --
 
 INSERT INTO `generalsettings` (`id`, `logo`, `phone`, `email`, `address`, `copyright_text`, `header_logo`, `error_banner`, `favicon`, `breadcumb`, `title`, `loader`, `smtp_host`, `mail_type`, `smtp_port`, `smtp_user`, `smtp_pass`, `mail_encryption`, `from_email`, `from_name`, `theme_color`, `theme`, `is_debug`, `is_disqus`, `disqus`, `is_tawk`, `tawk_id`, `is_verify`, `is_cookie`, `cookie_btn_text`, `cookie_text`, `is_popup`, `popup_image`, `popup_title`, `popup_url`, `is_maintenance`, `maintenance`, `maintenance_photo`, `menu`, `working_hour`, `header_text`, `contact_section_photo`, `contact_section_header_title`, `contact_section_title`, `footer_logo`, `footer_bg`, `faq_photo`, `counter_photo`, `social_links`, `hero_banner`, `hero_title`, `hero_text`, `hero_btn_text`, `hero_btn_link`, `testimonial_photo`, `want_to_header`, `want_to_sub`) VALUES
-(1, '1571567292logo.png', '01700000000', 'genius@gmail.com', '380 St, New York, USA', 'Copyright © 2023 Reserved Passion by GeniusOcean', '13240911911691043969.png', 'nx0dgfsa1dfsfa.jpg', '10552372151678610812.png', '15653222411687242749.jpg', 'Genius Service', '1564224328loading3.gif', 'smtp.mailtrap.io000', 'php_mail', '25', '72c114620aa8c0000', '2822701e2d8d9900', 'ssl', 'geniustest11@gmail.com', 'GeniusTest', '#18E57A', 'theme1', 1, 1, 'test', 0, 'twad', 1, 1, 'Submit', 'This website collects cookies to deliver better user experience', 0, 'IMn1588136843organizer.png', 'test', 'test', 0, 'Site Down', '19675019431679304578.png', '{\"Blog\":{\"title\":\"Blog\",\"dropdown\":\"no\",\"href\":\"http:\\/\\/localhost\\/work\\/foodpa\\/blog\",\"target\":\"self\"},\"Contact\":{\"title\":\"Contact\",\"dropdown\":\"no\",\"href\":\"http:\\/\\/localhost\\/work\\/foodpa\\/contact\",\"target\":\"self\"},\"Categories\":{\"title\":\"Categories\",\"dropdown\":\"yes\",\"href\":null,\"target\":\"self\"},\"Home\":{\"title\":\"Home\",\"dropdown\":\"no\",\"href\":\"ROUTE HERE\",\"target\":\"self\"},\"Return-Policy\":{\"title\":\"Return Policy\",\"dropdown\":\"no\",\"href\":\"http:\\/\\/localhost\\/work\\/foodpa\\/return-policy\",\"target\":\"self\"},\"test\":{\"title\":\"test\",\"dropdown\":\"no\",\"href\":\"Route Here\",\"target\":\"self\"}}', 'working hours : Mon-sat (8.00am - 6.00PM)', 'best cleaning company website forever!', '7824961511687426242.png', 'Your roof require professional attention', 'Book Your Appointment', '1471592251691044018.png', '3689839211687251534.jpg', '16389497441678873938.png', '13332160141687424315.jpg', NULL, '8794014411710833717.jpg', 'We Build Websites That Build Your Business', 'Affordable. Fast Turnaround.', 'Contact', 'https://project.geniusocean.com/roof/', '3578604961687427779.jpg', 'Website Design and Development', '<div style=\"text-align: center; color:#fff\">Imagine 14 days from today you could have your own high converting website.  A website that will open new possibilities for your business.\r\n</div><br>\r\n<div style=\"text-align: center; color:#fff\">\r\nStop wasting time procrastinating and trying to figure out how it all works.  Instead, concentrate on what you do best and we will do what we’re good at – creating awesome websites!</div>');
+(1, '1571567292logo.png', '01700000000', 'genius@gmail.com', '380 St, New York, USA', 'Copyright © 2023 Reserved Passion by GeniusOcean', '12641606371714969049.png', 'nx0dgfsa1dfsfa.jpg', '18236583601714968976.png', '15653222411687242749.jpg', 'Genius Service', '1564224328loading3.gif', 'smtp.mailtrap.io000', 'php_mail', '25', '72c114620aa8c0000', '2822701e2d8d9900', 'ssl', 'geniustest11@gmail.com', 'GeniusTest', '#18E57A', 'theme1', 1, 1, 'test', 0, 'twad', 1, 1, 'Submit', 'This website collects cookies to deliver better user experience', 0, 'IMn1588136843organizer.png', 'test', 'test', 0, 'Site Down', '19675019431679304578.png', '{\"Blog\":{\"title\":\"Blog\",\"dropdown\":\"no\",\"href\":\"http:\\/\\/localhost\\/work\\/foodpa\\/blog\",\"target\":\"self\"},\"Contact\":{\"title\":\"Contact\",\"dropdown\":\"no\",\"href\":\"http:\\/\\/localhost\\/work\\/foodpa\\/contact\",\"target\":\"self\"},\"Categories\":{\"title\":\"Categories\",\"dropdown\":\"yes\",\"href\":null,\"target\":\"self\"},\"Home\":{\"title\":\"Home\",\"dropdown\":\"no\",\"href\":\"ROUTE HERE\",\"target\":\"self\"},\"Return-Policy\":{\"title\":\"Return Policy\",\"dropdown\":\"no\",\"href\":\"http:\\/\\/localhost\\/work\\/foodpa\\/return-policy\",\"target\":\"self\"},\"test\":{\"title\":\"test\",\"dropdown\":\"no\",\"href\":\"Route Here\",\"target\":\"self\"}}', 'working hours : Mon-sat (8.00am - 6.00PM)', 'best cleaning company website forever!', '7824961511687426242.png', 'Your roof require professional attention', 'Book Your Appointment', '14387245511714968968.png', '3689839211687251534.jpg', '16389497441678873938.png', '13332160141687424315.jpg', NULL, '8794014411710833717.jpg', 'We Build Websites That Build Your Business', 'Affordable. Fast Turnaround.', 'Contact', 'https://project.geniusocean.com/roof/', '3578604961687427779.jpg', 'Website Design and Development', '<div style=\"text-align: center; color:#fff\">Imagine 14 days from today you could have your own high converting website.  A website that will open new possibilities for your business.\r\n</div><br>\r\n<div style=\"text-align: center; color:#fff\">\r\nStop wasting time procrastinating and trying to figure out how it all works.  Instead, concentrate on what you do best and we will do what we’re good at – creating awesome websites!</div>');
 
 -- --------------------------------------------------------
 
@@ -822,17 +834,22 @@ CREATE TABLE `services` (
   `slug` varchar(255) DEFAULT NULL,
   `sort_text` text DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `feature_icon` varchar(191) DEFAULT NULL,
   `description` text NOT NULL,
   `service_quality_text` text DEFAULT NULL,
-  `service_quality_photo` varchar(255) DEFAULT NULL,
-  `service_quality_before_photo` varchar(191) DEFAULT NULL,
   `attribute` varchar(555) DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `is_feature` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `category_id`, `title`, `slug`, `sort_text`, `photo`, `description`, `service_quality_text`, `attribute`, `status`, `is_feature`, `created_at`, `updated_at`) VALUES
+(12, 5, 'Website Design', 'website-design', 'Crafting captivating digital experiences, our website design service offers tailored solutions to elevate your online presence.', '4601678631714976141.jpg', '<p>Navigating the transition to online presence for your business can be exhilarating, yet daunting. Our specialty lies in crafting bespoke websites for small businesses, offering support tailored to your needs. Whether you seek a fully curated website experience or prefer guidance through designing your own WordPress site, we\'re here to assist.</p>\r\n\r\n<p>Embark on a journey with us by scheduling a complimentary Website Strategy Session. During this session, we\'ll delve into your current position and aspirations, collaboratively devising a tailored plan that aligns with your business objectives, budgetary constraints, and the skills and time you can dedicate.</p>\r\n\r\n<p>Let\'s chart a course together towards your digital success. Get in touch today to kickstart your online journey with confidence.</p>', NULL, 'Ongoing Support and Maintenance,Tailored Design Solutions,Stunning Visuals,Responsive and Mobile-Friendly,SEO Optimization', 1, 1, NULL, NULL),
+(13, 5, 'Website Audit', 'website-audit', 'Unveil the hidden potential of your digital presence with our comprehensive Website Audit service. From performance optimization to SEO analysis, we provide actionable insights to enhance your online performance and maximize ROI.', '8843745741714991330.jpg', '<p>Unveil the hidden potential of your digital presence with our comprehensive Website Audit service. From performance optimization to SEO analysis, we provide actionable insights to enhance your online performance and maximize ROI.<br></p>\r\n\r\n<p>In today\'s hypercompetitive digital landscape, your website serves as the cornerstone of your online presence. However, without regular maintenance and optimization, even the most well-designed websites can fall short of their potential. That\'s where our Website Audit service comes in.</p>\r\n\r\n<p>Our team of experienced digital experts conducts a meticulous examination of your website, delving deep into its structure, performance, and functionality. We leave no stone unturned, identifying areas for improvement and uncovering hidden opportunities to enhance your online performance.</p>', NULL, '', 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -852,8 +869,12 @@ CREATE TABLE `service_faqs` (
 --
 
 INSERT INTO `service_faqs` (`id`, `service_id`, `title`, `content`) VALUES
-(7, 9, 'How stay calm from the first time.', 'Your roof is one of the most crucial components of your home, providing protection from the elements and ensuring the safety of your family.'),
-(8, 9, 'How stay calm from the first time.', 'Your roof is one of the most crucial components of your home, providing protection from the elements and ensuring the safety of your family.');
+(7, 12, 'How long does it take to design and build a website?', 'The timeline for website design varies depending on factors like complexity, features, and client feedback. Typically, a simple website can take a few weeks to design and develop, while more complex projects may take several months.'),
+(8, 12, 'What is website design, and why is it important for my business?', 'Website design involves creating the visual and functional elements of a website. It\'s crucial for businesses as it serves as their digital storefront, often forming the first impression on potential customers.'),
+(13, 12, 'Can you design a website that reflects my brand identity?', 'Absolutely! Our team specializes in creating custom website designs that align with your brand identity, including colors, fonts, imagery, and messaging. We\'ll work closely with you to ensure your website reflects the essence of your brand.'),
+(14, 12, 'How much does website design service cost?', 'The cost of website design varies depending on factors such as complexity, features, and customization requirements. We offer flexible pricing options to accommodate different budgets and business needs. Contact us for a personalized quote based on your specific project requirements.'),
+(15, 12, 'What if I already have a website but want to redesign it?', 'No problem! We offer website redesign services to refresh the look and feel of your existing website, improve functionality, and enhance user experience. Whether you need minor updates or a complete overhaul, we can help breathe new life into your online presence.'),
+(16, 12, 'How do I get started with your website design service?', 'It\'s simple! Just reach out to us to schedule a consultation or request a quote. During our initial discussion, we\'ll learn more about your business, goals, and requirements, and outline a plan to create the perfect website for you. Let\'s bring your digital vision to life together!');
 
 -- --------------------------------------------------------
 
@@ -1163,6 +1184,12 @@ ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `features`
+--
+ALTER TABLE `features`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `generalsettings`
 --
 ALTER TABLE `generalsettings`
@@ -1404,6 +1431,12 @@ ALTER TABLE `faqs`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `features`
+--
+ALTER TABLE `features`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `generalsettings`
 --
 ALTER TABLE `generalsettings`
@@ -1485,13 +1518,13 @@ ALTER TABLE `seo_settings`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `service_faqs`
 --
 ALTER TABLE `service_faqs`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `shippings`

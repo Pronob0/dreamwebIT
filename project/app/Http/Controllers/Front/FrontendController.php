@@ -48,7 +48,7 @@ class FrontendController extends Controller
     {
 
         $data['counters'] = Counter::get();
-        $data['projects'] = Project::with('category')->orderby('id', 'desc')->take(6)->get();
+        $data['projects'] = Project::with('category')->orderby('id', 'desc')->take(4)->get();
         $data['brands'] = Brand::get();
         $data['feature_services'] = Service::where('is_feature', 1)->latest()->take(3)->get();
         $data['teams'] = Team::take(4)->get();

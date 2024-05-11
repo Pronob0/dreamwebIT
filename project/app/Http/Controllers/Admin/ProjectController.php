@@ -59,10 +59,7 @@ class ProjectController extends Controller
             'title' => 'required|string|max:255|unique:projects,title' . ($id ? ',' . $id : ''),
             'category_id' => 'required|integer',
             'details' => 'required|string',
-            'client' => 'required|string',
-            'date' => 'required|string',
             'photo' => $id ? '' : 'required|' . 'image|mimes:jpeg,png,jpg|max:2048',
-            'address' => 'required|string',
 
         ]);
 
@@ -81,19 +78,8 @@ class ProjectController extends Controller
         $data->title = $request->title;
         $data->slug = Str::slug($request->title);
         $data->category_id = $request->category_id;
-        $data->client = $request->client;
-        $data->date = $request->date;
         $data->details = $request->details;
-        $data->facebook = $request->facebook;
-        $data->twitter = $request->twitter;
-        $data->linkedin = $request->linkedin;
-        $data->instagram = $request->instagram;
-        $data->address = $request->address;
-        $data->end_date = $request->end_date;
         $data->website = $request->website;
-        $data->email= $request->email;
-        $data->phone= $request->phone;
-
         $data->save();
 
     }

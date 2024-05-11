@@ -51,35 +51,6 @@
 
 
                         
-                        <div class="form-group">
-                            <label for="client">{{ __('Client') }}*</label>
-                            <input type="text" class="form-control" name="client" id="client" required
-                                placeholder="{{ __('client') }}" value="{{ old('client') }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="client">{{ __('Email') }}*</label>
-                            <input type="email" class="form-control" name="email" id="client" required
-                                placeholder="{{ __('Email') }}" value="{{ old('client') }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">{{ __('Phone') }}*</label>
-                            <input type="text" class="form-control" name="phone" id="phone" required
-                                placeholder="{{ __('phone') }}" value="{{ old('phone') }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="date">{{ __('Project Start Date') }}*</label>
-                            <input type="date" class="form-control" name="date" id="date" required
-                                placeholder="{{ __('Project Date') }}" value="{{ old('date') }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="date">{{ __('Project End Date') }}*</label>
-                            <input type="date" class="form-control" name="end_date" id="date" required
-                                placeholder="{{ __('Project End Date') }}" value="{{ old('date') }}">
-                        </div>
 
                         <div class="form-group">
                             <label for="details">{{ __('Details') }}*</label>
@@ -88,50 +59,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="date">{{ __('Website') }}*</label>
+                            <label for="date">{{ __('Demo Link') }}*</label>
                             <input type="text" class="form-control" name="website" id="date" required
-                                placeholder="{{ __('Website URL') }}" value="{{ old('date') }}">
+                                placeholder="{{ __('Demo URL') }}" value="{{ old('date') }}">
                         </div>
-
-                        <div class="form-group">
-                            <label for="date">{{ __('Address') }}*</label>
-                            <input type="text" class="form-control" name="address" id="date" required
-                                placeholder="{{ __('Address') }}" value="{{ old('date') }}">
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="facebook">{{ __('Facebook') }}</label>
-                                    <input type="text" class="form-control" name="facebook" id="facebook" 
-                                        placeholder="{{ __('Facebook') }}" value="{{ old('facebook') }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="twitter">{{ __('Twitter') }}</label>
-                                    <input type="text" class="form-control" name="twitter" id="twitter" 
-                                        placeholder="{{ __('Twitter') }}" value="{{ old('twitter') }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="linkedin">{{ __('Linkedin') }}</label>
-                                    <input type="text" class="form-control" name="linkedin" id="linkedin" 
-                                        placeholder="{{ __('Linkedin') }}" value="{{ old('linkedin') }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="instagram">{{ __('Instagram') }}</label>
-                                    <input type="text" class="form-control" name="instagram" id="instagram" 
-                                        placeholder="{{ __('Instagram') }}" value="{{ old('instagram') }}">
-                                </div>
-                            </div>
-                        </div>
-
-
-
                         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                     </form>
                 </div>

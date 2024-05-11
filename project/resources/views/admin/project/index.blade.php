@@ -36,12 +36,14 @@
                                     <img src="{{ getPhoto($item->photo) }}" alt="icon" class="img-fluid"
                                         style="width: 150px">
                                 </td>
+
+                                <td data-label="@lang('Category')">
+                                    {{ $item->category->name }}
+                                </td>
                                 <td data-label="@lang('Name')">
                                     {{ $item->title }}
                                 </td>
-                                <td data-label="@lang('Designation')">
-                                    {{ $item->category->name }}
-                                </td>
+                                
 
                                 <td data-label="@lang('Action')" class="text-right">
                                     <a href="{{ route('admin.project.edit', $item->id) }}"

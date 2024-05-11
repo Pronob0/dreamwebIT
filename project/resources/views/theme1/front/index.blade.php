@@ -247,52 +247,34 @@
 </section>
 <!-- End Testimonial Section -->
 
-<!-- Start Team Section -->
-{{-- <section class="team-area section-padding">
+{{-- project section start here  --}}
+<section class="project-section section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h6 class="sub-title">@lang('Team Member')</h6>
-                    <h2>@lang('Expert Team')</h2>
+                    <h6 class="sub-title">@lang('Our Project')</h6>
+                    <h2>@lang('Recent Project')</h2>
                 </div>
             </div>
-            @foreach ($teams as $team)
-            <div class="col-lg-3 col-md-6">
-                <div class="single-team-box">
-                    <div class="team-image">
-                        <img src="{{ getPhoto($team->photo) }}" alt="team">
-                        <div class="team-social-icon">
-                            @if ($team->facebook)
-                            <a href="{{ $team->facebook }}"><i class="fab fa-facebook-f"></i></a>
+            @foreach ($projects as $project)
 
-                            @endif
-                            @if ($team->twitter)
-                            <a href="{{ $team->twitter }}"><i class="fab fa-twitter"></i></a>
-                            @endif
-                            @if ($team->linkedin)
-                            <a href="{{ $team->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
 
-                            @endif
-                            @if ($team->instagram)
-                            <a href="{{ $team->instagram }}"><i class="fab fa-instagram"></i></a>
-
-                            @endif
-
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>{{ $team->name }}</h3>
-                        <span>{{ $team->designation }}</span>
-                    </div>
-                </div>
+            <div class="col-md-3">
+                
+                  <img src="{{ getPhoto($project->photo) }}" class="card-img-top img-fluid " alt="Project 1">
+                  <div class="card-body my-3">
+                    <a href="{{ route('front.project.details',$project->slug) }}" class="card-title h6">{{Str::limit($project->title, 50 , '....')  }}</a>
+                  </div>
+                
             </div>
+
+
             @endforeach
 
         </div>
     </div>
-</section> --}}
-<!-- End Team Section -->
+</section>
 
 <!-- Start Blog Section -->
 <section class="blog-section bg-grey pt-100 pb-70">

@@ -50,36 +50,6 @@
                             </select>
                         </div>
 
-
-                        
-                        <div class="form-group">
-                            <label for="client">{{ __('Client') }}*</label>
-                            <input type="text" class="form-control" name="client" id="client" required
-                                placeholder="{{ __('client') }}" value="{{ old('client',$project->client) }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="client">{{ __('Email') }}*</label>
-                            <input type="email" class="form-control" name="email" id="client" required
-                                placeholder="{{ __('Email') }}" value="{{ old('client',$project->email) }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">{{ __('Phone') }}*</label>
-                            <input type="text" class="form-control" name="phone" id="phone" required
-                                placeholder="{{ __('phone') }}" value="{{ old('phone',$project->phone) }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="date">{{ __('Project Start Date') }}*</label>
-                            <input type="date" class="form-control" name="date" id="date" required
-                                placeholder="{{ __('Project Date') }}" value="{{ old('date',$project->date) }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="date">{{ __('Project End Date') }}*</label>
-                            <input type="date" class="form-control" name="end_date" id="end_date" required
-                                placeholder="{{ __('Project End Date') }}" value="{{ old('date',$project->end_date) }}">
-                        </div>
-
                         <div class="form-group">
                             <label for="details">{{ __('Details') }}*</label>
                             <textarea id="area1" class="form-control summernote" name="details" placeholder="{{ __('Details') }}"
@@ -87,46 +57,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="website">{{ __('Website') }}*</label>
+                            <label for="website">{{ __('Demo Link') }}*</label>
                             <input type="text" class="form-control" name="website" id="website" required
-                                placeholder="{{ __('Website URL') }}" value="{{ old('website',$project->website) }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address">{{ __('Address') }}*</label>
-                            <input type="text" class="form-control" name="address" id="address" required
-                                placeholder="{{ __('Address') }}" value="{{ old('address',$project->address) }}">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="facebook">{{ __('Facebook') }}</label>
-                                    <input type="text" class="form-control" name="facebook" id="facebook" 
-                                        placeholder="{{ __('Facebook') }}" value="{{ old('facebook',$project->facebook) }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="twitter">{{ __('Twitter') }}</label>
-                                    <input type="text" class="form-control" name="twitter" id="twitter" 
-                                        placeholder="{{ __('Twitter') }}" value="{{ old('twitter',$project->twitter) }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="linkedin">{{ __('Linkedin') }}</label>
-                                    <input type="text" class="form-control" name="linkedin" id="linkedin" 
-                                        placeholder="{{ __('Linkedin') }}" value="{{ old('linkedin',$project->linkedin) }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="instagram">{{ __('Instagram') }}</label>
-                                    <input type="text" class="form-control" name="instagram" id="instagram" 
-                                        placeholder="{{ __('Instagram') }}" value="{{ old('instagram',$project->instagram) }}">
-                                </div>
-                            </div>
+                                placeholder="{{ __('Website Demo Link') }}" value="{{ old('website',$project->website) }}">
                         </div>
 
                         <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>

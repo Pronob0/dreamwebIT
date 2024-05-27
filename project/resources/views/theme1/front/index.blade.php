@@ -298,11 +298,11 @@
                         <ul class="blog-info">
                             <li>
                                 <a href="{{route('front.blog.details',$blog->slug)}}"><i
-                                        class="bi bi-person-circle"></i> @lang('Admin')</a>
+                                        class="fas fa-user"></i> @lang('Admin')</a>
                             </li>
                             <li>
                                 <a href="{{route('front.blog.details',$blog->slug)}}"><i
-                                        class="bi bi-calendar-check"></i>{{ dateFormat($blog->created_at) }}</a>
+                                        class="fas fa-calendar"></i>{{ dateFormat($blog->created_at) }}</a>
                             </li>
                         </ul>
                         <div class="blog-text">
@@ -315,7 +315,7 @@
                             <p>{!! Str::limit($blog->description, 10) !!}</p>
 
                             <div class="blog-btn"> <a href="{{route('front.blog.details',$blog->slug)}}"
-                                    class="read-more"><i class="bi bi-arrow-right-short"></i> @lang('Read More')</a>
+                                    class="read-more"><i class="fas  fa-arrow-right"></i> @lang('Read More')</a>
                             </div>
                         </div>
                     </div>
@@ -330,66 +330,7 @@
 <!-- End Blog Section -->
 
 
-<!-- Start Contact Section -->
-<div class="contact-section section-padding">
-    <div class="container">
-        <div class="section-title">
-            <h6 class="sub-title">@lang("Let's Talk")</h6>
-            <h2>@lang('Contact Us')</h2>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-10 offset-lg-1">
-                <div class="contact-form">
-                    <p class="form-message"></p>
-                    <form id="contact-form" class="contact-form form" action="{{ route('front.gettuch.submit') }}"
-                        method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control" required
-                                        placeholder="Your Name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" required
-                                        placeholder="Your Email">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="phone" id="phone" required class="form-control"
-                                        placeholder="Your Phone">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-grp select-grp">
-                                    <select id="shortBy" name="service_id" class="orderby" class="form-control">
-                                        <option value="">@lang('Select Service')</option>
-                                        @foreach (DB::table('services')->whereStatus(1)->get() as $cservice)
-                                        <option value="{{ $cservice->id }}">{{ $cservice->title }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="6"
-                                        required placeholder="Your Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <button type="submit" class="default-btn submit-btn">@lang('Send Message
-                                    ')<span></span></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- End Contact Section -->
 
 

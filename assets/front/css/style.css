@@ -2611,14 +2611,14 @@ p:last-child {
  ************************************/
 .home-6.home-section {
   overflow: hidden;
-  position: relative;
-  z-index: 1;
-  height: 800px;
-  min-height: 100vh;
-  background: url(../img/home-6-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+    position: relative;
+    z-index: 1;
+    height: 527px;
+    min-height: 98vh;
+    background: url(../img/home-6-bg.jpg);
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
 }
 
 .home-6.home-section:before {

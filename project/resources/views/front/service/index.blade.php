@@ -41,7 +41,10 @@
                 </div>
             </div>
             @endforeach
-            {{ $services->links() }}
+           
+
+             {{ $services->links() }}
+
         </div>
     </div>
 </section>

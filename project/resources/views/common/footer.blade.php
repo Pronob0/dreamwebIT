@@ -14,8 +14,11 @@
 
                     <form action="{{ route('front.subscriber.submit') }}" method="POST">
                         @csrf
-                        <input type="email" class="input-newsletter" name="email" placeholder="Enter Your Email" required autocomplete="off">
-                        <button type="submit">@lang('Subscribe Now')</button>
+                        <div class="d-flex">
+                        <input type="email" class="input-newsletter form-control w-50 me-3" name="email" placeholder="Enter Your Email" required autocomplete="off">
+                        <button class="btn btn-primary " type="submit">@lang('Subscribe Now')</button>
+                        </div>
+                        
                     </form>
                     
                 </div>
@@ -75,18 +78,18 @@
                             <h3>@lang('Contact Info')</h3>
                         </div>
                         <div class="footer-info-contact">
-                            <i class="flaticon-phone-call"></i>
+                            <i class="fas fa-phone"></i>
                             <h3>@lang('Phone')</h3>
                             
                             <span><a href="tel:{{ $gs->phone }}">{{ $gs->phone }}</a></span>
                         </div>
                         <div class="footer-info-contact">
-                            <i class="flaticon-envelope"></i>
+                            <i class="fas fa-envelope"></i>
                             <h3>@lang('Email')</h3>
                             <span><a href="mailto:{{ $gs->email }}">{{ $gs->email }}</a></span>
                         </div>
                         <div class="footer-info-contact">
-                            <i class="flaticon-placeholder"></i>
+                            <i class="fas fa-map"></i>
                             <h3>@lang('Address')</h3>
                             <span>{{ $gs->address }}</span>
                         </div>

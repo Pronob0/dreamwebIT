@@ -3,6 +3,39 @@
 @section('content')
 <!-- Hero-area -->
 
+<style>
+    .product-box__cont {
+    padding: 15px 15px 0;
+}
+.product-box__cont .rating {
+    margin-bottom: 12px;
+}
+.text--star {
+    color: #facb1e;
+}
+.product-box__cont .title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-clr);
+}
+.product-box__cont .price-area {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 14px 0;
+}
+.product-box__cont .price-area .price {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+.product-box__cont .cmn--btn.btn-outline {
+    border-width: 1px;
+    border-color: var(--border-clr);
+    color: var(--title-clr);
+}
+
+</style>
+
 <!-- Start Home Section -->
 <div class="home-6 home-section" style="background: url({{ getPhoto($gs->hero_banner) }})">
     <div class="d-table">
@@ -260,13 +293,31 @@
             @foreach ($projects as $project)
 
 
-            <div class="col-md-3">
-                
-                  <img src="{{ getPhoto($project->photo) }}" class="card-img-top img-fluid " alt="Project 1">
-                  <div class="card-body my-3">
-                    <a href="{{ route('front.project.details',$project->slug) }}" class="card-title h6">{{Str::limit($project->title, 50 , '....')  }}</a>
-                  </div>
-                
+            <div class="col-md-6 col-xl-4">
+                <div class="product-box" style="border-radius: 15px; background:#fff">
+                    <div class="product-box__img" style="border-radius: 15px; background:#fff">
+                        <a href="https://geniusocean.com/product/genius-hyip-all-in-one-investment-platform" class="d-block">
+                            <img style="border-radius: 15px; width:100%; transition: all ease 0.3s" src="https://geniusocean.com/assets/images/13463353661658310098.jpg" alt="products">
+                        </a>
+                    </div>
+
+                    <div class="product-box__cont">
+                        <div class="rating d-flex align-items-center">
+                            <div class="text--star me-1"><i class="fas fa-star"></i> 4.7</div> (70)
+                        </div>
+                        <h5 class="title">
+                            <a href="https://geniusocean.com/product/genius-hyip-all-in-one-investment-platform">Genius HYIP - All in One Investment Platform</a>
+                        </h5>
+                        <div class="price-area">
+                            <div class="price">
+                                <span class="me-2">Starting at</span>
+                                <h4 class="amount">$49</h4>
+                            </div>
+                            <a href="https://codecanyon.net/item/genius-hyip-all-in-one-investment-platform/37317769?s_rank=1" class="cmn--btn btn-outline">Live Review</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
 

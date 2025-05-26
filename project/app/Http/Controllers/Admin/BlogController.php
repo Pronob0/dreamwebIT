@@ -53,13 +53,13 @@ class BlogController extends Controller
         ]);
 
        
-            $data->tags = tagFormat($request->tags);
-         
-        
+        $data->tags = tagFormat($request->tags);
+        $data->meta_tags = tagFormat($request->meta_tags);
         $data->title = $request->title;
         $data->slug = Str::slug($request->title);
         $data->category_id = $request->category_id;
         $data->description = $request->description;
+        $data->meta_description = $request->meta_description;
         $data->status = $request->status;
         if(isset($request['photo'])){
             $status = MediaHelper::ExtensionValidation($request['photo']);

@@ -6,41 +6,35 @@
 <!-- Bootstrap Min JS -->
 <script src="{{ asset('assets/front') }}/js/bootstrap.bundle.min.js"></script>
 <!-- Mean Menu JS  -->
-<script src="{{ asset('assets/front') }}/js/jquery.meanmenu.js"></script>
+{{-- <script src="{{ asset('assets/front') }}/js/jquery.meanmenu.js"></script> --}}
 <!-- Appear Min JS -->
 <script src="{{ asset('assets/front') }}/js/jquery.appear.min.js"></script>
 <!-- CounterUp Min JS -->
 <script src="{{ asset('assets/front') }}/js/jquery.waypoints.min.js"></script>
+
 <script src="{{ asset('assets/front') }}/js/jquery.counterup.min.js"></script>
+
+{{-- Toastr JS  --}}
+<script src="{{ asset('assets/front') }}/js/toastr.min.js"></script>
 <!-- Owl Carousel Min JS -->
-<script src="{{ asset('assets/front') }}/js/owl.carousel.min.js"></script>
-<!-- Magnific Popup Min JS -->
-<script src="{{ asset('assets/front') }}/js/jquery.magnific-popup.min.js"></script>
-<!-- Isotope Min JS -->
-<script src="{{ asset('assets/front') }}/js/isotope.pkgd.min.js"></script>
-<!-- Swiper Min JS -->
-<script src="{{ asset('assets/front') }}/js/swiper.min.js"></script>
-<!-- Vanilla Tilt Min JS -->
-<script src="{{ asset('assets/front') }}/js/vanilla-tilt.min.js"></script>
-<!-- WOW Min JS -->
+
 <script src="{{ asset('assets/front') }}/js/wow.min.js"></script>
-<!-- Ajax Mail JS -->
-<script src="{{ asset('assets/front') }}/js/ajax.mail.js"></script>
 <!-- Main JS -->
 <script src="{{ asset('assets/front') }}/js/main.js"></script>
-
-
-
-
-
-
 
 
 @include('notify.alert')
 
 
 <script>
+
     'use strict';
+
+ document.querySelector('.lang-btn').addEventListener('click', function () {
+        const dropdown = document.querySelector('.lang-dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    
   
     $(document).ready(function() {
 	$('.btn-accept').on('click', function() {

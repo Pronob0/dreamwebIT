@@ -100,6 +100,11 @@
                             
 
                         </div>
+
+                        <div class="form-group">
+                            <label for="meta_tag">{{ __('Meta Tags') }}</label>
+                            <input type="text" class="form-control" name="meta_tags[]" id="meta_tag" placeholder="{{ __('Meta Tags') }}" value="{{old('Meta Tags')}}">
+                        </div> 
                         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                     </form>
                 </div>
@@ -124,6 +129,10 @@
         });
         
         $(document).ready(function() {
+            
+       
+            $('#meta_tag').tagify();
+    
             var max_fields = 10;
             var wrapper = $("#experience");
             var add_button = $("#list-add");

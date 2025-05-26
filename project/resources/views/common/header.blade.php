@@ -5,8 +5,8 @@
             <div class="techvio-responsive-menu">
                 <div class="logo">
                     <a href="{{ route('front.index') }}">
-                        <img src="{{ getPhoto($gs->header_logo) }}" class="white-logo" alt="logo">
-                        <img src="{{ getPhoto($gs->footer_logo) }}" class="black-logo" alt="logo">
+                        <img height="75px" src="{{ getPhoto($gs->header_logo) }}" class="white-logo" alt="logo">
+                        <img height="75px" src="{{ getPhoto($gs->footer_logo) }}" class="black-logo" alt="logo">
                     </a>
                 </div>
             </div>
@@ -16,9 +16,14 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="index.html">
-                    <img src="{{ getPhoto($gs->header_logo) }}" class="white-logo" alt="logo">
-                    <img src="{{ getPhoto($gs->footer_logo) }}" class="black-logo" alt="logo">
+                    <img src="{{ getPhoto($gs->header_logo) }}" 
+                         class="logo-img white-logo" 
+                         alt="logo">
+                    <img src="{{ getPhoto($gs->footer_logo) }}" 
+                         class="logo-img black-logo" 
+                         alt="logo">
                 </a>
+                
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item"> 
@@ -28,6 +33,9 @@
                             <a href="{{ route('front.service') }}" class="nav-link">@lang('Services') <i class="fas fa-chevron-down"></i></a>
 
                             <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="{{ route('front.service') }}" class="nav-link">@lang('All Services')</a>
+                                </li>
                                 @foreach ($services as $navservice)
 
                                 <li class="nav-item">
@@ -38,55 +46,33 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('front.project') }}" class="nav-link">@lang('Portfolio') <i class="fas fa-chevron-down"></i></a>
+                            <a href="{{ route('front.project') }}" class="nav-link">@lang('Portfolio')</a>
                             
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
+                            <a href="{{ route('front.blog') }}" class="nav-link">@lang('Blog')</a>
                             
                         </li>
-                        <li class="nav-item"> 
-                            <a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="team.html" class="nav-link">Team</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pricing.html" class="nav-link">Pricing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="error-404.html" class="nav-link">404 Error</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="faq.html" class="nav-link">FAQ</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a href="coming-soon.html" class="nav-link">Coming Soon</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="terms-condition.html" class="nav-link">Terms & Conditions</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">About Us</a>
+                            <a href="{{ route('front.about') }}" class="nav-link">@lang('About Us')</a>
                         </li>
                         
 
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
+                            <a href="{{ route('front.contact') }}" class="nav-link">@lang('Contact')</a>
                         </li>
 
                     </ul>
-                    <div class="other-option">
-                        <a class="call-btn" href="tel:12345678"><i class="flaticon-phone-call"></i> 080 707 555-321</a>
+                    <div class="language-switcher" style="position: relative; display: inline-block; margin-right: 10px;">
+                        <button class="lang-btn" style="background-color: #7c67f2; color:#fff; border-radius:5px; border: 1px solid #ccc; padding: 8px 12px; cursor: pointer;">
+                            <i class="fa-solid fa-globe"></i> {{ Session::has('language') ? ( Session::get('language') == 1 ? 'English' : 'Deutsch' ) : 'English' }} <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="lang-dropdown" style="display: none; position: absolute; background-color: white; min-width: 100px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); z-index: 1;">
+                            @foreach(DB::table('languages')->get() as $language)
+                            <a href="{{route('front.language',$language->id)}}" style="display: block; padding: 8px 12px; text-decoration: none; color: black;">{{$language->language}}</a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </nav>

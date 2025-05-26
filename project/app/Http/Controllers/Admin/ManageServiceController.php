@@ -16,7 +16,7 @@ class ManageServiceController extends Controller
     public function index()
     {
         
-        $services = Service::orderby('id', 'desc')->paginate(15);
+        $services = Service::orderBy('id','desc')->get();
         return view('admin.service.index', compact('services'));
     }
 
@@ -84,6 +84,7 @@ class ManageServiceController extends Controller
         
 
         $data->category_id = $request->category_id;
+        $data->meta_tags = tagFormat($request->meta_tags);
         $data->title = $request->title;
         $data->slug = Str::slug($request->title);
         $data->sort_text = $request->sort_text;

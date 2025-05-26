@@ -73,7 +73,18 @@
                             <option value="1">{{__('Active')}}</option>
                             <option value="0">{{__('Inactive')}}</option>
                         </select>
-                    </div>        
+                    </div> 
+                    <hr>
+                    <h2>Meta Information</h2> 
+                    <div class="form-group">
+                        <label for="meta_description">{{ __('Meta Description') }}</label>
+                        <textarea id="meta_description" class="form-control" name="meta_description" placeholder="{{ __('Meta Description') }}" >{{old('Meta description')}}</textarea>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="meta_tag">{{ __('Meta Tags') }}</label>
+                        <input type="text" class="form-control" name="meta_tags[]" id="meta_tag" placeholder="{{ __('Meta Tags') }}" value="{{old('Meta Tags')}}">
+                    </div>      
               
            
                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
@@ -92,6 +103,7 @@
 <script>
     $(document).ready(function() {
        $('#tags').tagify();
+       $('#meta_tag').tagify();
     });
 
 </script>

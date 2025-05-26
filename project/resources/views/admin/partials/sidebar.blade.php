@@ -31,10 +31,7 @@
                                         class="fas fa-envelope-open-text"></i></i>
                                 <span>@lang('Manage Contact')</span></a>
                         <ul class="dropdown-menu">
-                                <li class="{{ menu('admin.contact.getintouch.message') }}"><a class="nav-link"
-                                                href="{{ route('admin.contact.getintouch.message') }}">@lang('Get in
-                                                Touch')</a>
-                                </li>
+                                
                                 <li class="{{ menu('admin.contact.message') }}"><a class="nav-link"
                                                 href="{{ route('admin.contact.message') }}">@lang('Contact
                                                 Messages')</a>

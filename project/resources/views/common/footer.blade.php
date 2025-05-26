@@ -34,7 +34,7 @@
                     <div class="single-footer-widget">
                         <a class="footer-logo" href="{{ route('front.index') }}">
                            
-                            <img src="{{ getPhoto($gs->footer_logo) }}" class="white-logo" alt="logo">
+                            <img style="height:75px" src="{{ getPhoto($gs->footer_logo) }}" class="white-logo" alt="logo">
                         </a>
                         <p>@lang('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco consectetur laboris.')</p>
                         <ul class="footer-social">
@@ -66,7 +66,7 @@
                         <ul class="footer-quick-links">
                             <li><a href="{{ route('front.index') }}">@lang('Home')</a></li>
                             <li><a href="{{ route('front.service') }}">@lang('Services')</a></li>
-                            <li><a href="{{ route('front.project') }}">@lang('Projects')</a></li>
+                            <li><a href="{{ route('front.project') }}">@lang('Portfolio')</a></li>
                             <li><a href="{{ route('front.blog') }}">@lang('Blog')</a></li>
                             <li><a href="{{ route('front.contact') }}">@lang('Contacts')</a></li>
                         </ul>

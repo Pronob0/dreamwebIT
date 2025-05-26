@@ -63,7 +63,7 @@
 
                 <div class="form-group">
                     <label for="tags">{{ __('Tags') }}</label>
-                    <input type="text" class="form-control" value="{{ $blog->tags }}" name="tags[]" id="tags" placeholder="{{ __('Tags') }}" value="{{old('tags')}}">
+                    <input type="text" class="form-control" value="{{ $blog->tags }}" name="tags[]" id="tags" placeholder="{{ __('Tags') }}" >
                 </div>
 
              
@@ -73,7 +73,19 @@
                             <option value="1" {{$blog->status == 1 ? 'selected':''}}>{{__('Active')}}</option>
                             <option value="0" {{$blog->status == 0 ? 'selected':''}}>{{__('Inactive')}}</option>
                         </select>
-                    </div>        
+                    </div> 
+                    
+                    <hr>
+                    <h2>Meta Information</h2> 
+                    <div class="form-group">
+                        <label for="meta_description">{{ __('Meta Description') }}</label>
+                        <textarea id="meta_description" class="form-control" name="meta_description" placeholder="{{ __('Meta Description') }}" >{{$blog->meta_description}}</textarea>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="meta_tag">{{ __('Meta Tags') }}</label>
+                        <input type="text" class="form-control" value="{{ $blog->meta_tags }}" name="meta_tags[]" id="meta_tag" placeholder="{{ __('Meta Tags') }}">
+                    </div> 
               
            
                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
@@ -92,6 +104,7 @@
 <script>
     $(document).ready(function() {
        $('#tags').tagify();
+       $('#meta_tag').tagify();
     });
 
 </script>

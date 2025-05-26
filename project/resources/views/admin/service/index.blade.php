@@ -74,9 +74,7 @@
                         @endforelse
                     </table>
                 </div>
-                <div class="d-flex mr-3 justify-content-end">
-                    {{ $services->links() }}
-                </div>
+                
             </div>
         </div>
     </div>

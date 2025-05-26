@@ -52,11 +52,7 @@ class ContactController extends Controller
         $messages = ContactMessage::whereType('contact')->orderBy('id', 'desc')->get();
         return view('admin.contact.messages', compact('messages'));
     }
-    public function getintouch()
-    {
-        $messages = ContactMessage::whereType('get_in_touch')->orderBy('id', 'desc')->get();
-        return view('admin.contact.getintouch', compact('messages'));
-    }
+    
 
     public function contactMessageDelete (Request $request)
     {

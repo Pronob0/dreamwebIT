@@ -44,17 +44,12 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <div class="main-banner-content">
-                            <ul class="social-icon-list">
-                                @foreach (DB::table('social_links')->get() as $social)
-                                <li><a href="{{ $social->link }}"><i class="{{ $social->icon }}"></i></a></li>
-                                @endforeach
-
-                            </ul>
-                            <h1>{{ $gs->hero_title }}</h1>
-                            <p>{{ $gs->hero_text }}</p>
+                           
+                            <h1>@lang($gs->hero_title)</h1>
+                            <p>@lang($gs->hero_text)</p>
                             <div class="banner-btn">
-                                <a class="default-btn-one" href="services.html">@lang('Our Service') <span></span></a>
-                                <a class="default-btn-two" href="contact.html">@lang('Contact Us') <span></span></a>
+                                <a class="default-btn-one" href="{{ route('front.service') }}">@lang('Our Service') <span></span></a>
+                                <a class="default-btn-two" href="{{ route('front.contact') }}">@lang('Contact Us') <span></span></a>
                             </div>
                         </div>
                     </div>
@@ -113,8 +108,8 @@
 
                     </h6>
                     <div class="hire-btn">
-                        <a class="default-btn" href="tel:12345678">Call Now<span></span></a>
-                        <a class="default-btn-one" href="contact.html">Contact Us<span></span></a>
+                        <a class="default-btn" href="tel:12345678">@lang('Call Now')<span></span></a>
+                        <a class="default-btn-one" href="{{ route('front.contact') }}">@lang('Contact Us')<span></span></a>
                     </div>
                 </div>
             </div>
@@ -122,6 +117,7 @@
     </div>
 </section>
 <!-- End Hire Section -->
+A website is a crucial part of any business. It can help you:
 
 
 <!-- Start Feature Two Section -->
@@ -130,8 +126,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h6 class="sub-title">Why Choose Us?</h6>
-                    <h2>Our Feature</h2>
+                    <h6 class="sub-title">@lang('Why Choose Us?')</h6>
+                    <h2>@lang('Our Feature')</h2>
                 </div>
             </div>
             @foreach ($features as $item)
@@ -152,36 +148,83 @@
 <!-- End Feature Two Section -->
 
 <!-- Start Counter Section -->
-<section class="counter-area section-padding">
+<section class="counter-area section-padding" >
     <div class="container">
-        <div class="row">
-            @foreach ($counters as $counter)
-            <div class="col-lg-3 col-md-6 counter-item">
-                <div class="single-counter">
-                    <div class="counter-contents">
-                        <h2>
-                            <span class="counter-number">{{ $counter->counter_number }}</span>
-                            <span>+</span>
-                        </h2>
-                        <h3 class="counter-heading">{{ $counter->title }}</h3>
-                    </div>
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-light">Why Every Small Business Needs a Website</h2>
+            <p class=" fs-5 text-light">
+              Boost your growth, build credibility, and connect with customers all in one place.
+            </p>
+            <p class=" fs-5 text-light">
+                Discover the top advantages of having a professionally designed website for your small business..
+              </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-semibold" style="color:#7C68ED">Boosts Visibility & Credibility</h5>
+                  <p class="card-text text-muted">
+                    A professional website helps new customers find you and builds trust in your brand.
+                  </p>
                 </div>
+              </div>
             </div>
-            @endforeach
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-semibold" style="color:#7C68ED">Connects You With Customers</h5>
+                  <p class="card-text text-muted">
+                    Share your story, showcase services, and engage with your audience directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-semibold" style="color:#7C68ED">Drives More Sales</h5>
+                  <p class="card-text text-muted">
+                    Convert visitors into buyers with a site that works for you around the clock.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-semibold" style="color:#7C68ED">Builds Your Brand Presence</h5>
+                  <p class="card-text text-muted">
+                    Your website reflects who you are it’s your brand’s digital home.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        </div>
     </div>
 </section>
 <!-- End Counter Section -->
 
+<div class="container pt-5">
+    <div class="section-title">
+        <h3>@lang("Let’s Build Something Great!")</h3>
+        <h6 class="sub-title">@lang('Offering a range of web development services')</h6>
+        
+    </div>
+</div>
 
 <!-- Start Overview Section -->
 @foreach ($feature_services as $key => $value)
 
 
-<section class="overview-section section-padding">
+<section class="overview-section py-5">
     <div class="container">
+       
         <div class="row align-items-center">
+            
+                
+            
             @if($key % 2 == 0)
             <div class="col-lg-6">
                 <div class="overview-image">
@@ -231,101 +274,95 @@
 <!-- End Overview Section -->
 @endforeach
 
+{{-- Why need website --}}
+
+  
 
 <!-- Start Testimonial Section -->
-<section class="testimonial-section pt-100 pb-50">
+<section class="testimonial-section py-5 bg-gradient-primary">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h6 class="sub-title">@lang('Our Testimonial')</h6>
-                    <h2>@lang('Client Feedback')</h2>
-                </div>
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h6 class="text-uppercase text-light mb-3">@lang('Client Voices')</h6>
+                <h2 class="display-4 fw-bold text-white">@lang('What Our Clients Say')</h2>
             </div>
-            <div class="col-lg-12 col-md-12">
-                <div class="testimonial-slider owl-carousel owl-theme">
-                    <!-- testimonials item -->
+        </div>
 
-                    @foreach ($testimonials as $testimonial)
-                    <div class="single-testimonial">
-                        <div class="rating-box">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>{{ $testimonial->message }}</p>
-                        </div>
-                        <div class="avatar">
-                            <img src="{{ getPhoto($testimonial->photo) }}" alt="testimonial images">
-                        </div>
-                        <div class="testimonial-bio">
-                            <div class="bio-info">
-                                <h3>{{ $testimonial->name }}</h3>
-                                <span>{{ $testimonial->designation }}</span>
+        <div class="row">
+            <div class="col-12">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        @foreach ($testimonials as $key => $testimonial)
+                        <button type="button" 
+                                data-bs-target="#testimonialCarousel" 
+                                data-bs-slide-to="{{ $key }}" 
+                                class="{{ $key === 0 ? 'active' : '' }}" 
+                                aria-current="{{ $key === 0 ? 'true' : 'false' }}"></button>
+                        @endforeach
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        @foreach ($testimonials->chunk(3) as $chunk)
+                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                            <div class="row g-4">
+                                @foreach ($chunk as $testimonial)
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="testimonial-card card border-0 shadow-lg h-100 hover-effect">
+                                        <div class="card-body p-4">
+                                            <div class="quote-icon">
+                                                <i class="fas fa-quote-left text-primary fa-2x"></i>
+                                            </div>
+                                            <div class="rating mb-3">
+                                                @for($i = 0; $i < 5; $i++)
+                                                <i class="fas fa-star text-warning"></i>
+                                                @endfor
+                                            </div>
+                                            <p class="lead text-muted mb-4">{{ $testimonial->message }}</p>
+                                            <div class="client-info d-flex align-items-center">
+                                                <div class="client-img me-3">
+                                                    <img src="{{ getPhoto($testimonial->photo) }}" 
+                                                         alt="{{ $testimonial->name }}"
+                                                         class="rounded-circle shadow-sm"
+                                                         width="60"
+                                                         height="60">
+                                                </div>
+                                                <div class="client-details">
+                                                    <h5 class="mb-1 fw-bold text-dark">{{ $testimonial->name }}</h5>
+                                                    <small class="text-muted">{{ $testimonial->designation }}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
 
-
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">@lang('Previous')</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">@lang('Next')</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+
 <!-- End Testimonial Section -->
 
-{{-- project section start here  --}}
-<section class="project-section section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h6 class="sub-title">@lang('Our Project')</h6>
-                    <h2>@lang('Recent Project')</h2>
-                </div>
-            </div>
-            @foreach ($projects as $project)
 
-
-            <div class="col-md-6 col-xl-4">
-                <div class="product-box" style="border-radius: 15px; background:#fff">
-                    <div class="product-box__img" style="border-radius: 15px; background:#fff">
-                        <a href="https://geniusocean.com/product/genius-hyip-all-in-one-investment-platform" class="d-block">
-                            <img style="border-radius: 15px; width:100%; transition: all ease 0.3s" src="https://geniusocean.com/assets/images/13463353661658310098.jpg" alt="products">
-                        </a>
-                    </div>
-
-                    <div class="product-box__cont">
-                        <div class="rating d-flex align-items-center">
-                            <div class="text--star me-1"><i class="fas fa-star"></i> 4.7</div> (70)
-                        </div>
-                        <h5 class="title">
-                            <a href="https://geniusocean.com/product/genius-hyip-all-in-one-investment-platform">Genius HYIP - All in One Investment Platform</a>
-                        </h5>
-                        <div class="price-area">
-                            <div class="price">
-                                <span class="me-2">Starting at</span>
-                                <h4 class="amount">$49</h4>
-                            </div>
-                            <a href="https://codecanyon.net/item/genius-hyip-all-in-one-investment-platform/37317769?s_rank=1" class="cmn--btn btn-outline">Live Review</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            @endforeach
-
-        </div>
-    </div>
-</section>
 
 <!-- Start Blog Section -->
 <section class="blog-section bg-grey pt-100 pb-70">

@@ -107,7 +107,10 @@
                             </div>
                             @endforeach
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="meta_tag">{{ __('Meta Tags') }}</label>
+                            <input type="text" class="form-control" value="{{ $service->meta_tags }}" name="meta_tags[]" id="meta_tag" placeholder="{{ __('Meta Tags') }}">
+                        </div> 
 
 
                         <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
@@ -134,6 +137,10 @@
         });
        
         $(document).ready(function() {
+            
+       
+            $('#meta_tag').tagify();
+    
             var max_fields = 10;
             var wrapper = $("#experience");
             var add_button = $("#list-add");

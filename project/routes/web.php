@@ -57,7 +57,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/role/store', [ManageRoleController::class, 'store'])->name('role.store');
     Route::put('/role/update/{id}', [ManageRoleController::class, 'update'])->name('role.update');
     Route::delete('/role/delete', [ManageRoleController::class, 'destroy'])->name('role.destroy');
-    Route::get('/getintouch/message', [ContactController::class, 'getintouch'])->name('contact.getintouch.message');
     Route::delete('/contact/message/delete', [ContactController::class, 'contactMessageDelete'])->name('contact.message.delete');
     Route::put('/contact/page/setting/update', [ContactController::class, 'update'])->name('contact.setting.update');
     Route::delete('/subscriber/delete', [AdminController::class, 'subscribersDelete'])->name('subscriber.destroy');
@@ -273,6 +272,6 @@ Route::middleware(['maintenance'])->group(function () {
     Route::get('/service/{slug}', [FrontendController::class, 'service_details'])->name('front.service.details');
     Route::get('/projects', [FrontendController::class, 'project'])->name('front.project');
     Route::get('/project/{slug}', [FrontendController::class, 'project_details'])->name('front.project.details');
-
+    Route::get('/language/{id}', [FrontendController::class,'language'])->name('front.language');
     Route::get('/{slug}', [FrontendController::class, 'page'])->name('front.page');
 });

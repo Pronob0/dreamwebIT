@@ -6,3 +6,5 @@
 
 		<link rel="shortcut icon" type="image/x-icon" href="{{getPhoto($gs->favicon)}}">
         <!-- Place favicon.ico in the root directory -->
+
+        

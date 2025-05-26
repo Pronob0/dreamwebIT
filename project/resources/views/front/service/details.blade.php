@@ -2,8 +2,7 @@
 
 @section('content')
 
-<!-- Start Page Title Section -->
-<div class="page-title-area item-bg1">
+<div class="page-title-area item-bg1" style="background-image:url({{ getPhoto($gs->breadcumb) }})">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
@@ -18,7 +17,6 @@
         </div>
     </div>
 </div>
-<!-- End Page Title Section -->
 
 <!-- Start Services Details Section -->
 <section class="services-details-area section-padding">
